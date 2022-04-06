@@ -1,0 +1,101 @@
+h1.highlighted {
+    border: 2px red solid;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+h1.highlighted::after {
+    content: "h1";
+    position: absolute;
+    background-color: red;
+    margin-left: 10px;
+    border-radius: 10px;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+h2.highlighted {
+    border: 2px green solid;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+h2.highlighted::after {
+    content: "h2";
+    position: absolute;
+    background-color: green;
+    margin-left: 10px;
+    border-radius: 10px;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+h3.highlighted {
+    border: 2px blue solid;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+h3.highlighted::after {
+    content: "h3";
+    position: absolute;
+    background-color: blue;
+    margin-left: 10px;
+    border-radius: 10px;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+h4.highlighted {
+    border: 2px magenta solid;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+h4.highlighted::after {
+    content: "h4";
+    position: absolute;
+    background-color: magenta;
+    margin-left: 10px;
+    border-radius: 10px;
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+h5.highlighted {
+    border: 2px yellow solid;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+h5.highlighted::after {
+    content: "h5";
+    position: absolute;
+    background-color: yellow;
+    margin-left: 10px;
+    border-radius: 10px;
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+h6.highlighted {
+    border: 2px cyan solid;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+h6.highlighted::after {
+    content: "h6";
+    position: absolute;
+    background-color: cyan;
+    margin-left: 10px;
+    border-radius: 10px;
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+}
