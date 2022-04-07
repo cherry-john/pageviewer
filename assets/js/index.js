@@ -3,9 +3,8 @@ $('#uploadForm').on("submit", (event) => {
     event.preventDefault();
     var reader = new FileReader();
     reader.onload = (e) => {
-        $("#preProcessing").contents().find('body').html(e.target.result);    
-        $("#preProcessing").contents().find("body").append('<link href="assets/css/highlighted.css" rel="stylesheet" type="text/css" >');
-        copyBetweenIframes($("#preProcessing"), $("#postProcessing"));
+        $("#pageContent").contents().find('body').html(e.target.result);    
+        $("#pageContent").contents().find("body").append('<link href="assets/css/highlighted.css" rel="stylesheet" type="text/css" >');
     }
     reader.readAsBinaryString($('#inputFile').prop('files')[0]);
 })
@@ -18,18 +17,16 @@ $('#siteForm').on("submit", async (event) => {
         method: 'POST',
         data: {url: $('#inputURL').val()}
     }).done((result) => {
-        $("#preProcessing").contents().find('body').html(result.response);
+        $("#pageContent").contents().find('body').html(result);
     }).fail((xhr, status) => {
         console.log(status);
     });
-    $("#preProcessing").contents().find("head").append('<link href="assets/css/highlighted.css" rel="stylesheet" type="text/css" >');
-    copyBetweenIframes($("#preProcessing"), $("#postProcessing"));
+    $("#pageContent").contents().find("head").append('<link href="assets/css/highlighted.css" rel="stylesheet" type="text/css" >');
 })
 
 //Button Functions
 const highlightHeadings = () => {
-    $("#preProcessing").contents().find('h1, h2, h3, h4, h5, h6').toggleClass("highlighted");
-    $("#postProcessing").contents().find('h1, h2, h3, h4, h5, h6').toggleClass("highlighted");
+    $("#pageContent").contents().find('h1, h2, h3, h4, h5, h6').toggleClass("highlighted");
 }
 
 //CorrectHeadings -> Main functionality
@@ -71,9 +68,4 @@ const CorrectHeadings = (iframe) => {
         return heading;
     }
     return "h" + (currentHeadingLevel + 1).toString();
-}
-
-const copyBetweenIframes = (originalIframe, newIframe) => {
-    newIframe.contents().find("head").html(originalIframe.contents().find("head").html());
-    newIframe.contents().find("body").html(originalIframe.contents().find("body").html());
 }
