@@ -52,6 +52,17 @@ const CorrectHeadings = (iframe) => {
         })
 }
 
+const saveFile = () => {
+    const dataBlob = new Blob([$('#pageContent').contents().find("html").html()], {type: "text/html"});
+
+    const elem = window.document.createElement('a');
+    elem.href = window.URL.createObjectURL(dataBlob);
+    elem.download = "updatedContent.html";
+    document.body.appendChild(elem);
+    elem.click();//trigger the download
+    document.body.removeChild(elem);
+}
+
 
 //Utilities
 /**
