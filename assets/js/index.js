@@ -13,7 +13,7 @@ $('#siteForm').on("submit", async (event) => {
     event.preventDefault();
     //Use api to get content to avoid cors errors
     $.ajax({
-        url: "http://api.johncherry.me/page",
+        url: "https://api.johncherry.me/page",
         method: 'POST',
         data: {url: $('#inputURL').val()}
     }).done((result) => {
